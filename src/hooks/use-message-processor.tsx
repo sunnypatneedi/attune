@@ -150,7 +150,7 @@ export function useMessageProcessor() {
     // Simple response generation for demo
     if (intention === 'Question') {
       return message.includes('weather') 
-        ? "Based on the forecast, tomorrow will be sunny with a high of 75°F."
+        ? "Based on the forecast, tomorrow will be clear with a high of 75°F."
         : "That's an interesting question. I'll do my best to help you find the answer.";
     }
     
