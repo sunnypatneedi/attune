@@ -16,7 +16,7 @@ export class EventBus {
   private broadcastChannel: BroadcastChannel | null = null;
   private id: string;
 
-  constructor(channelName: string = 'adaptive-chat-ui') {
+  constructor(channelName: string = 'attune') {
     this.subject = new Subject<any>();
     this.id = `instance_${Math.random().toString(36).substring(2, 9)}_${Date.now()}`;
     this.initializeBroadcastChannel(channelName);
@@ -126,10 +126,10 @@ export class EventBus {
     } else {
       // Fall back to localStorage
       try {
-        const storageKey = 'adaptive-chat-ui_event';
+        const storageKey = 'attune_event';
         localStorage.setItem(storageKey, JSON.stringify(message));
         // Trigger a custom event to notify same-tab listeners
-        window.dispatchEvent(new CustomEvent('adaptive-chat-ui-local-broadcast', { detail: message }));
+        window.dispatchEvent(new CustomEvent('attune-local-broadcast', { detail: message }));
       } catch (error) {
         console.error('Error broadcasting via localStorage:', error);
       }

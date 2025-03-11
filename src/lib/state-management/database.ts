@@ -9,7 +9,7 @@ import {
 } from '../types';
 
 // Key for the database in localStorage
-const DB_STORAGE_KEY = 'adaptive-chat-ui-db';
+const DB_STORAGE_KEY = 'attune-db';
 
 /**
  * Initialize the SQLite database.
