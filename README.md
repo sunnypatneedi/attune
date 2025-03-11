@@ -34,8 +34,8 @@ A modern, responsive chat framework with an intelligent conversational engine bu
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/adaptive-chat-ui.git
-cd adaptive-chat-ui
+git clone https://github.com/sunnypatneedi/attune.git
+cd attune
 ```
 
 2. Install dependencies:
@@ -115,3 +115,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Shadcn UI](https://ui.shadcn.com) for the beautiful component library
 - [sql.js](https://github.com/sql-js/sql.js) for bringing SQLite to the browser
 - [RxJS](https://rxjs.dev) for the powerful reactive programming model
+
