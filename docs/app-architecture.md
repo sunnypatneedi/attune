@@ -1,4 +1,4 @@
-# Adaptive Chat UI Architecture
+# Attune Architecture
 
 ## Component Structure
 
