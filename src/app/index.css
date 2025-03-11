@@ -1,0 +1,135 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 195 29% 13%;
+    --foreground: 30 12% 91%;
+
+    --card: 200 26% 16%;
+    --card-foreground: 30 12% 91%;
+
+    --popover: 200 26% 16%;
+    --popover-foreground: 30 12% 91%;
+
+    --primary: 192 70% 30%;
+    --primary-foreground: 30 12% 91%;
+
+    --secondary: 30 65% 54%;
+    --secondary-foreground: 195 29% 13%;
+
+    --muted: 200 15% 25%;
+    --muted-foreground: 30 5% 70%;
+
+    --accent: 120 29% 50%;
+    --accent-foreground: 195 29% 13%;
+
+    --destructive: 0 65% 60%;
+    --destructive-foreground: 30 12% 91%;
+
+    --border: 200 15% 25%;
+    --input: 200 15% 25%;
+    --ring: 30 65% 54%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 200 26% 12%;
+    --sidebar-foreground: 30 12% 91%;
+    --sidebar-primary: 30 65% 54%;
+    --sidebar-primary-foreground: 195 29% 13%;
+    --sidebar-accent: 200 15% 20%;
+    --sidebar-accent-foreground: 30 12% 91%;
+    --sidebar-border: 200 15% 20%;
+    --sidebar-ring: 30 65% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit;
+  }
+
+  p, span, div {
+    @apply font-source;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
+  }
+  
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-lg border border-white/5 rounded-xl;
+  }
+
+  .message-bubble {
+    @apply relative rounded-2xl px-4 py-3 drop-shadow-md transition-all duration-300;
+  }
+
+  .message-bubble-user {
+    @apply message-bubble bg-message-user text-white ml-auto rounded-tr-sm;
+  }
+
+  .message-bubble-system {
+    @apply message-bubble bg-message-system text-white mr-auto rounded-tl-sm;
+  }
+
+  .intention-tag {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-white/10 backdrop-blur-md;
+  }
+
+  .entity-tag {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-chat-accent/20 text-chat-accent;
+  }
+
+  .section-title {
+    @apply font-outfit text-sm font-medium uppercase tracking-wider text-chat-accent;
+  }
+
+  .info-section {
+    @apply p-4 mb-4 rounded-xl bg-black/20 backdrop-blur-lg border border-white/5;
+  }
+
+  .shimmer {
+    @apply bg-gradient-to-r from-transparent via-white/10 to-transparent bg-shine bg-[length:200%_100%] animate-shimmer;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-white/20;
+  }
+}

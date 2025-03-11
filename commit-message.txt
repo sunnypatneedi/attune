@@ -1,0 +1,30 @@
+feat(ui): integrate adaptive chat demo with client components
+
+# Description
+This commit integrates the adaptive chat UI demo into the main application structure
+with proper Next.js client component directives. It ensures all components using 
+React hooks are properly configured with 'use client' directives as required by Next.js 15.
+
+# Changes
+- Added 'use client' directive to all React components using hooks
+- Updated page.tsx to correctly use dynamic imports with client components
+- Added Jest testing infrastructure to validate component quality
+- Created test scripts to ensure all components follow project standards
+- Added architectural documentation with Mermaid diagrams
+
+# Design Principles
+This implementation adheres to our biophilic design principles with:
+- Natural color palette (deep teal, amber accents, sage green tertiary elements)
+- Organic styling with subtle gradients and natural transitions
+- Enhanced understanding framework with intention detection and entity recognition
+
+# Quality Assurance
+- Ensured all components are properly linted with correct React hook usage
+- Added automated tests to prevent future regressions
+- Maintained function size under 50 lines for clarity
+- Documented component architecture for easier maintenance
+
+# Testing
+- Added tests to verify client component configuration
+- Added quality validation tests for code standards
+- Manually tested UI rendering and interactivity

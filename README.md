@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Adaptive Chat UI with RxJS and SQLite
+
+A modern, responsive chat interface with a conversational engine built using Next.js, Shadcn UI, RxJS, and SQLite (via sql.js). This project demonstrates how to build an adaptive UI that reacts to real-time events and persists data locally.
+
+![Adaptive Chat UI](https://github.com/yourusername/adaptive-chat-ui/raw/main/public/screenshot.png)
+
+## Features
+
+- 💬 **Conversational Interface**: Clean and intuitive chat UI with user and bot messages
+- 🎨 **Adaptive Design**: UI components that react to events in real-time
+- 🔄 **Event-Based Architecture**: Using RxJS for decoupled component communication
+- 💾 **Local Persistence**: SQLite database in the browser using sql.js
+- 🔄 **Cross-Tab Synchronization**: Chat state synced across multiple browser tabs
+- 🌓 **Dark/Light Mode**: Toggle between dark and light themes
+
+## Tech Stack
+
+- **[Next.js](https://nextjs.org)**: React framework for server-rendered applications
+- **[Shadcn UI](https://ui.shadcn.com)**: Beautiful, accessible UI components
+- **[Tailwind CSS](https://tailwindcss.com)**: Utility-first CSS framework
+- **[RxJS](https://rxjs.dev)**: Reactive programming library for event handling
+- **[sql.js](https://github.com/sql-js/sql.js)**: SQLite compiled to WebAssembly
+- **[TypeScript](https://www.typescriptlang.org)**: Typed JavaScript for better developer experience
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.x or later
+- npm 7.x or later
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/adaptive-chat-ui.git
+cd adaptive-chat-ui
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How It Works
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Event-Based Architecture
 
-## Learn More
+The application uses an RxJS Subject as an event bus to facilitate communication between components. Key events include:
 
-To learn more about Next.js, take a look at the following resources:
+- User message events
+- Bot response events
+- Typing indicator events
+- Theme change events
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Components subscribe to these events to update their state and render accordingly.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Local Database
 
-## Deploy on Vercel
+Chat messages and user preferences are stored in a SQLite database running in the browser using sql.js. The database is:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Initialized when the application loads
+- Saved to localStorage periodically and on page unload
+- Restored from localStorage when the application is re-opened
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Cross-Tab Synchronization
+
+The application uses the BroadcastChannel API (with localStorage as a fallback) to synchronize chat state across multiple browser tabs. This ensures a consistent experience when the user has the application open in multiple windows.
+
+## Project Structure
+
+```
+src/
+├── app/                 # Next.js App Router
+├── components/
+│   ├── ui/              # Shadcn UI components
+│   └── chat/            # Chat-specific components
+└── lib/                 # Utility functions and core logic
+    ├── database.ts      # SQLite database operations
+    ├── event-bus.ts     # RxJS event system
+    ├── use-event-bus.ts # React hooks for the event system
+    └── conversation-engine.ts # Message processing logic
+```
+
+## Customization
+
+### Conversation Engine
+
+The conversation engine in `src/lib/conversation-engine.ts` can be enhanced with more sophisticated logic or integrated with external AI services like OpenAI's API.
+
+### UI Components
+
+Shadcn UI components can be customized by modifying their source code in the `src/components/ui` directory.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- [Shadcn UI](https://ui.shadcn.com) for the beautiful component library
+- [sql.js](https://github.com/sql-js/sql.js) for bringing SQLite to the browser
+- [RxJS](https://rxjs.dev) for the powerful reactive programming model
