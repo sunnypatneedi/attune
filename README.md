@@ -2,7 +2,7 @@
 
 A modern, responsive chat framework with an intelligent conversational engine built using Next.js, Shadcn UI, RxJS, and SQLite (via sql.js). Attune demonstrates how to build adaptive UIs that react to real-time events and persist data locally.
 
-![Attune](https://github.com/sunnypatneedi/attune/raw/main/public/screenshot.png)
+![Attune Chat Interface](https://github.com/sunnypatneedi/attune/raw/main/public/screenshots/attune-interface.png)
 
 ## Features
 
