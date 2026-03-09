@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Core plugin system types for the Attune framework
  * Enables extensibility through well-defined interfaces

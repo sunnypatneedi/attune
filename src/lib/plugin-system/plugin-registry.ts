@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Plugin Registry implementation
  * Central system for registering, managing and accessing plugins

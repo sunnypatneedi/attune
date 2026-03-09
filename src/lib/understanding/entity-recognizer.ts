@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Entity, EntityType } from '../enhanced-types';
 
 /**

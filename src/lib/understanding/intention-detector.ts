@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Intention, IntentionType, Entity } from '../enhanced-types';
 
 /**

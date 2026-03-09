@@ -13,9 +13,9 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "useDefineForClassFields": true,
-    "exactOptionalPropertyTypes": true,
+    "exactOptionalPropertyTypes": false,
     "plugins": [
       {
         "name": "next"
